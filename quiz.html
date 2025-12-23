@@ -9,473 +9,157 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
- body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;   
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-
-
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0.6)
-  );
-
-  z-index: -1;
-}
-
-    .quiz-section {
-      width: 100%;
-      max-width: 1000px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      animation: fadeUp 0.8s ease forwards;
-    }
-
-    .titulo-quiz {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px;
-      letter-spacing: 2px;
-      color: #ffffff;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-      text-align: center;
-    }
-
-    .img-pergunta {
-      width: 600px;
-      max-width: 85%;
-      border-radius: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    }
-
-    .pergunta {
-      font-family: 'Fjalla One', sans-serif;
-      font-size: 30px;
-      color: #e7e4ec;
-      font-weight: bold;
-      background: linear-gradient(135deg, #2f9292, #064444);
-      padding: 14px 22px;
-      border-radius: 30px;
-      text-align: center;
-      max-width: 900px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-    }
-
-    .alternativas {
-      width: 100%;
-      max-width: 700px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .opcao {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
-      padding: 16px 20px;
-      border-radius: 20px;
-      border: none;
-      background: linear-gradient(135deg, #ffffff22, #ffffff10);
-      color: #ffffff;
-      text-align: left;
-      cursor: pointer;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .opcao:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
-    }
-
-    .opcao.correta {
-      background: linear-gradient(135deg, #2ecc71, #27ae60);
-    }
-
-    .opcao.errada {
-      background: linear-gradient(135deg, #e74c3c, #c0392b);
-    }
-
-    .opcao:disabled {
-      cursor: default;
-    }
-
-    .resultado {
-      display: none;
-      text-align: center;
-      max-width: 800px;
-      padding: 40px 20px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #111, #000);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    }
-
-    .resultado h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px;
-      color: #ffffff;
-      letter-spacing: 2px;
-    }
-
-    .resultado p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 26px;
-      color: #e7e4ec;
-      margin-top: 10px;
-    }
-
-    .resultado img {
-      display: block;
-      margin: 20px auto 0;
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .titulo-quiz {
-        font-size: 36px;
-      }
-
-      .pergunta {
-        font-size: 22px;
-      }
-    }
-  </style>
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
 </head>
+<body class="quiz-page" id="quiz-container">
 
-<body>
-
-  <!-- PERGUNTA 1 -->
+  <!-- PERGUNTAS -->
   <section class="quiz-section">
     <h1 class="titulo-quiz">Pergunta 1</h1>
-
     <img class="img-pergunta" src="files/neymessi.webp">
-
-    <p class="pergunta">
-      Quais os 3 jogadores que Neymar mais atuou ao lado em sua carreira?
-    </p>
-
+    <p class="pergunta">Quais os 3 jogadores que Neymar mais atuou ao lado em sua carreira?</p>
     <div class="alternativas">
       <button class="opcao">A) Messi, Mbappé e Thiago Silva</button>
       <button class="opcao">B) Mbappé, Messi e Marquinhos</button>
       <button class="opcao">C) Messi, Thiago Silva e Dani Alves</button>
-      <button class="opcao" data-correct="true">
-        D) Messi, Marquinhos e Dani Alves
-      </button>
+      <button class="opcao" data-correct="true">D) Messi, Marquinhos e Dani Alves</button>
     </div>
   </section>
 
-    <!-- PERGUNTA 2 -->
   <section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 2</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neydebut.jpg"
-  >
-
-  <p class="pergunta">
-    Em que ano Neymar estreou profissionalmente pelo Santos?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) 2008</button>
-
-    <button class="opcao" data-correct="true">
-      B) 2009
-    </button>
-
-    <button class="opcao">C) 2010</button>
-    <button class="opcao">D) 2007</button>
-  </div>
-</section>
-
-  <!-- PERGUNTA 3 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 3</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-eua.webp"
-  >
-
-  <p class="pergunta">
-    Contra quem Neymar marcou seu primeiro gol pela Seleção Brasileira?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) Argentina</button>
-
-    <button class="opcao" data-correct="true">
-      B) Estados Unidos
-    </button>
-
-    <button class="opcao">C) Gana</button>
-
-    <button class="opcao">D) Chile</button>
-  </div>
-</section>
-
-  <!-- PERGUNTA 4 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 4</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-selecao.jpg"
-  >
-
-  <p class="pergunta">
-    Quantos gols Neymar tem pela Seleção Brasileira? (dezembro de 2025)
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) 77 gols</button>
-
-    <button class="opcao">B) 81 gols</button>
-
-    <button class="opcao" data-correct="true">
-      C) 79 gols
-    </button>
-
-    <button class="opcao">D) 75 gols</button>
-  </div>
-</section>
-  <!-- PERGUNTA 5 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 5</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-psg.jpg"
-  >
-    
-  <p class="pergunta">
-    Qual o valor da transferência do Neymar para o PSG em 2017?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao" data-correct="true">
-      A) 222.000.000€
-    </button>
-
-    <button class="opcao">B) 200.000.000€</button>
-
-    <button class="opcao">C) 220.000.000€</button>
-
-    <button class="opcao">D) 225.000.000€</button>
-  </div>
-</section>
-
-  <!-- PERGUNTA 6 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 6</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-gols.webp"
-  >
-
-  <p class="pergunta">
-    Quantos gols Neymar tem na carreira? (dezembro de 2025, dados do Transfermarkt)
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) 447</button>
-
-    <button class="opcao">B) 434</button>
-
-    <button class="opcao">C) 451</button>
-
-    <button class="opcao" data-correct="true">
-      D) 450
-    </button>
-  </div>
-</section>
-
-  <!-- PERGUNTA 7 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 7</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-final.webp"
-  >
-
-  <p class="pergunta">
-    Qual temporada Neymar foi vice-campeão da Champions League pelo PSG?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) 20/21</button>
-
-    <button class="opcao" data-correct="true">
-      B) 19/20
-    </button>
-
-    <button class="opcao">C) 21/22</button>
-
-    <button class="opcao">D) 18/19</button>
-  </div>
-</section>
-
-<!-- PERGUNTA 8 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 8</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-scores.webp"
-  >
-
-  <p class="pergunta">
-    Qual ano Neymar mais fez gols na carreira?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) 2011</button>
-
-    <button class="opcao">B) 2017</button>
-
-    <button class="opcao" data-correct="true">
-      C) 2012
-    </button>
-
-    <button class="opcao">D) 2015</button>
-  </div>
-</section>
-
-<!-- PERGUNTA 9 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 9</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-record.webp"
-  >
-
-  <p class="pergunta">
-    Qual recorde inédito Neymar fez na Champions League?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao" data-correct="true">
-      A) Marcar gols em todas as partidas de quartas, semifinais e a final de uma edição
-    </button>
-
-    <button class="opcao">B) Marcar 3 gols de falta em uma única edição</button>
-
-    <button class="opcao">C) Marcar gols em 4 jogos consecutivos da fase de grupos</button>
-
-    <button class="opcao">D) Ser o jogador mais jovem a marcar 20 gols na competição</button>
-  </div>
-</section>
-
-<!-- PERGUNTA 10 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 10</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-puskas.jpg"
-    alt="Neymar Prêmio Puskás"
-  >
-
-  <p class="pergunta">
-    Em que ano Neymar ganhou o prêmio Puskás, dado ao gol eleito mais bonito do ano?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) 2010</button>
-
-    <button class="opcao">B) 2012</button>
-
-    <button class="opcao">C) 2013</button>
-
-    <button class="opcao" data-correct="true">
-      D) 2011
-    </button>
-  </div>
-</section>
-
-<!-- PERGUNTA 11 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 11</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-hattrick.webp"
-    alt="Neymar hat-trick Champions League"
-  >
-
-  <p class="pergunta">
-    Neymar marcou hat-trick 3 vezes na Champions League, contra quais equipes?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) Estrela Vermelha, Bayern de Munique e Sion</button>
-
-    <button class="opcao" data-correct="true">
-      B) Celtic, Estrela Vermelha e Istanbul Basaksehir
-    </button>
-
-    <button class="opcao">C) Manchester United, Ajax e Porto</button>
-
-    <button class="opcao">D) Napoli, PSG e Celtic</button>
-  </div>
-</section>
-
-<!-- PERGUNTA 12 -->
-<section class="quiz-section">
-  <h1 class="titulo-quiz">Pergunta 12</h1>
-
-  <img
-    class="img-pergunta"
-    src="files/neymar-bike.webp"
-    alt="Neymar golaço de bicicleta"
-  >
-
-  <p class="pergunta">
-    Contra que time Neymar marcou um golaço de bicicleta em 2019?
-  </p>
-
-  <div class="alternativas">
-    <button class="opcao">A) Lyon</button>
-
-    <button class="opcao">B) Marseille</button>
-
-    <button class="opcao" data-correct="true">
-      C) Strasbourg
-    </button>
-
-    <button class="opcao">D) Monaco</button>
-  </div>
-</section>
-
-
-
-
-
-
-
-   <!-- RESULTADO FINAL -->
+    <h1 class="titulo-quiz">Pergunta 2</h1>
+    <img class="img-pergunta" src="files/neydebut.jpg">
+    <p class="pergunta">Em que ano Neymar estreou profissionalmente pelo Santos?</p>
+    <div class="alternativas">
+      <button class="opcao">A) 2008</button>
+      <button class="opcao" data-correct="true">B) 2009</button>
+      <button class="opcao">C) 2010</button>
+      <button class="opcao">D) 2007</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 3</h1>
+    <img class="img-pergunta" src="files/neymar-eua.webp">
+    <p class="pergunta">Contra quem Neymar marcou seu primeiro gol pela Seleção Brasileira?</p>
+    <div class="alternativas">
+      <button class="opcao">A) Argentina</button>
+      <button class="opcao" data-correct="true">B) Estados Unidos</button>
+      <button class="opcao">C) Gana</button>
+      <button class="opcao">D) Chile</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 4</h1>
+    <img class="img-pergunta" src="files/neymar-selecao.jpg">
+    <p class="pergunta">Quantos gols Neymar tem pela Seleção Brasileira? (dezembro de 2025)</p>
+    <div class="alternativas">
+      <button class="opcao">A) 77 gols</button>
+      <button class="opcao">B) 81 gols</button>
+      <button class="opcao" data-correct="true">C) 79 gols</button>
+      <button class="opcao">D) 75 gols</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 5</h1>
+    <img class="img-pergunta" src="files/neymar-psg.jpg">
+    <p class="pergunta">Qual o valor da transferência do Neymar para o PSG em 2017?</p>
+    <div class="alternativas">
+      <button class="opcao" data-correct="true">A) 222.000.000€</button>
+      <button class="opcao">B) 200.000.000€</button>
+      <button class="opcao">C) 220.000.000€</button>
+      <button class="opcao">D) 225.000.000€</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 6</h1>
+    <img class="img-pergunta" src="files/neymar-gols.webp">
+    <p class="pergunta">Quantos gols Neymar tem na carreira? (dezembro de 2025, dados do Transfermarkt)</p>
+    <div class="alternativas">
+      <button class="opcao">A) 447</button>
+      <button class="opcao">B) 434</button>
+      <button class="opcao">C) 451</button>
+      <button class="opcao" data-correct="true">D) 450</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 7</h1>
+    <img class="img-pergunta" src="files/neymar-final.webp">
+    <p class="pergunta">Qual temporada Neymar foi vice-campeão da Champions League pelo PSG?</p>
+    <div class="alternativas">
+      <button class="opcao">A) 20/21</button>
+      <button class="opcao" data-correct="true">B) 19/20</button>
+      <button class="opcao">C) 21/22</button>
+      <button class="opcao">D) 18/19</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 8</h1>
+    <img class="img-pergunta" src="files/neymar-scores.webp">
+    <p class="pergunta">Qual ano Neymar mais fez gols na carreira?</p>
+    <div class="alternativas">
+      <button class="opcao">A) 2011</button>
+      <button class="opcao">B) 2017</button>
+      <button class="opcao" data-correct="true">C) 2012</button>
+      <button class="opcao">D) 2015</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 9</h1>
+    <img class="img-pergunta" src="files/neymar-record.webp">
+    <p class="pergunta">Qual recorde inédito Neymar fez na Champions League?</p>
+    <div class="alternativas">
+      <button class="opcao" data-correct="true">A) Marcar gols em todas as partidas de quartas, semifinais e a final de uma edição</button>
+      <button class="opcao">B) Marcar 3 gols de falta em uma única edição</button>
+      <button class="opcao">C) Marcar gols em 4 jogos consecutivos da fase de grupos</button>
+      <button class="opcao">D) Ser o jogador mais jovem a marcar 20 gols na competição</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 10</h1>
+    <img class="img-pergunta" src="files/neymar-puskas.jpg" alt="Neymar Prêmio Puskás">
+    <p class="pergunta">Em que ano Neymar ganhou o prêmio Puskás, dado ao gol eleito mais bonito do ano?</p>
+    <div class="alternativas">
+      <button class="opcao">A) 2010</button>
+      <button class="opcao">B) 2012</button>
+      <button class="opcao">C) 2013</button>
+      <button class="opcao" data-correct="true">D) 2011</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 11</h1>
+    <img class="img-pergunta" src="files/neymar-hattrick.webp" alt="Neymar hat-trick Champions League">
+    <p class="pergunta">Neymar marcou hat-trick 3 vezes na Champions League, contra quais equipes?</p>
+    <div class="alternativas">
+      <button class="opcao">A) Estrela Vermelha, Bayern de Munique e Sion</button>
+      <button class="opcao" data-correct="true">B) Celtic, Estrela Vermelha e Istanbul Basaksehir</button>
+      <button class="opcao">C) Manchester United, Ajax e Porto</button>
+      <button class="opcao">D) Napoli, PSG e Celtic</button>
+    </div>
+  </section>
+
+  <section class="quiz-section">
+    <h1 class="titulo-quiz">Pergunta 12</h1>
+    <img class="img-pergunta" src="files/neymar-bike.webp" alt="Neymar golaço de bicicleta">
+    <p class="pergunta">Contra que time Neymar marcou um golaço de bicicleta em 2019?</p>
+    <div class="alternativas">
+      <button class="opcao">A) Lyon</button>
+      <button class="opcao">B) Marseille</button>
+      <button class="opcao" data-correct="true">C) Strasbourg</button>
+      <button class="opcao">D) Monaco</button>
+    </div>
+  </section>
+
+  <!-- RESULTADO FINAL -->
   <section class="resultado">
     <h2 id="titulo-resultado"></h2>
     <p id="texto-resultado"></p>
@@ -485,83 +169,9 @@ body::before {
   <!-- ÁUDIOS -->
   <audio id="musica" src="files/musica.mp3" loop></audio>
   <audio id="som-acerto" src="files/acerto.mp3"></audio>
-  <audio id="som-erro" src="files/erro.m4a"></audio>
+  <audio id="som-erro" src="files/erro.mp3"></audio>
 
-  <script>
-    const musica = document.getElementById("musica");
-    const permitido = localStorage.getItem("musicaPermitida");
-    if (permitido === "true") {
-      musica.volume = 0.5;
-      musica.play().catch(()=>{});
-    }
-
-    const somAcerto = document.getElementById("som-acerto");
-    const somErro = document.getElementById("som-erro");
-    somAcerto.volume = 0.7;
-    somErro.volume = 0.7;
-
-    let score = 0;
-    const totalPerguntas = 12;
-    let respondidas = 0;
-
-    document.querySelectorAll(".alternativas").forEach(grupo=>{
-      const botoes = grupo.querySelectorAll(".opcao");
-      botoes.forEach(botao=>{
-        botao.addEventListener("click", ()=>{
-          if (grupo.classList.contains("respondido")) return;
-          grupo.classList.add("respondido");
-          respondidas++;
-          botoes.forEach(b=>b.disabled=true);
-
-          if(botao.dataset.correct==="true"){
-            botao.classList.add("correta");
-            somAcerto.currentTime=0;
-            somAcerto.play();
-            score++;
-          } else {
-            botao.classList.add("errada");
-            somErro.currentTime=0;
-            somErro.play();
-            grupo.querySelector('[data-correct="true"]').classList.add("correta");
-          }
-
-          if(respondidas===totalPerguntas){
-            mostrarResultado();
-          }
-        });
-      });
-    });
-
-    function mostrarResultado(){
-      const titulo=document.getElementById("titulo-resultado");
-      const texto=document.getElementById("texto-resultado");
-      const img=document.getElementById("imagem-resultado");
-      const resultadoSection = document.querySelector(".resultado");
-      img.style.display='block';
-      resultadoSection.style.display = 'block';
-
-      if(score===totalPerguntas){
-        titulo.textContent="Neymarzete";
-        texto.textContent=`Você acertou ${score} de ${totalPerguntas}. Fã raiz do Neymar!`;
-        img.src="files/neymar-lenda.png";
-      } else if(score>=9){
-        titulo.textContent="Fã de Carteirinha";
-        texto.textContent=`Você acertou ${score} de ${totalPerguntas}. Sabe bastante, mas dá pra melhorar!`;
-        img.src="files/neymar-crack.png";
-      } else if(score>=6){
-        titulo.textContent="Torcedor Casual";
-        texto.textContent=`Você acertou ${score} de ${totalPerguntas}. Mais ou menos, vai`;
-        img.src="files/neymar-mid.png";
-      } else{
-        titulo.textContent="Iniciante";
-        texto.textContent=`Você acertou ${score} de ${totalPerguntas}. Chutou tudo, né? kkkkk`;
-        img.src="files/neymar-start.png";
-      }
-
-      resultadoSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  
-    }
-  </script>
-
+  <!-- JS externo -->
+  <script src="main.js"></script>
 </body>
 </html>
