@@ -5,10 +5,11 @@ Um quiz interativo sobre a carreira do Neymar, desenvolvido em **HTML, CSS e Jav
 ## 📂 Estrutura do Projeto
 quiz-neymar/
 │
-├─ index.html # Página inicial do quiz
-├─ quiz.html # Página do quiz, com as perguntas e resultados
-├─ files # Pasta com todos os arquivos de mídia
-└─ README.md # Este arquivo
+├─ index.html # Página inicial com slideshow e botão para começar
+├─ quiz.html # Página do quiz com perguntas, respostas e resultado final
+├─ style.css # Estilos para index.html e quiz.html
+├─ main.js # Lógica do slideshow, quiz e efeitos sonoros
+├─ files/ # Arquivos de mídia (imagens, música e efeitos sonoros)
 
 ## Como executar
 - Baixe a pasta .zip
