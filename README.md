@@ -11,8 +11,6 @@ quiz-neymar/
 ├─ main.js # Lógica do slideshow, quiz e efeitos sonoros
 ├─ files/ # Arquivos de mídia (imagens, música e efeitos sonoros)
 
-## Como executar
-- Baixe a pasta .zip
-- Descompacte e abra no VSCODE
-- Vá para index.html e use a extensão Live Preview
+## Clique aqui para executar
 
+https://kiellzz.github.io/quiz-neymar/
