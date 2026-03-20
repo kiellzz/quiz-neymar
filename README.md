@@ -1,8 +1,3 @@
-Esse é um projeto clássico e divertido! Como se trata de um ícone do futebol, o README pode ter uma energia mais vibrante, condizente com o tema, e destacar os elementos de mídia que você incluiu (música e efeitos).
-
-Aqui está uma sugestão para deixar o seu **Quiz Neymar** com uma cara bem profissional no GitHub:
-
----
 
 # ⚽ Quiz Neymar Jr.
 
