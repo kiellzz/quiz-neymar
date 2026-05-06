@@ -1,38 +1,83 @@
+# ⚽ Quiz Neymar Jr. • Interactive Football Trivia Experience
 
-# ⚽ Quiz Neymar Jr.
+</div>
 
-Um tributo interativo à carreira de um dos maiores camisas 10 da história. Este projeto é um quiz dinâmico que testa os conhecimentos do usuário sobre a trajetória do craque, desde o Santos até o topo do mundo.
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+</p>
 
-🚀 **[Clique aqui para jogar!](https://kiellzz.github.io/quiz-neymar/)**
+<p align="center">
+  <a href="https://kiellzz.github.io/quiz-neymar/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀%20Play%20Now-quiz--neymar-brightgreen?style=for-the-badge" alt="Live Demo" />
+  </a>
+</p>
+
+<div>
+
+An interactive tribute to one of football’s greatest number 10s.
+
+**Quiz Neymar Jr.** is a browser-based experience that challenges players to test their knowledge about Neymar’s career — from Santos to the global stage.
+
+The quiz is fully available in **Portuguese (PT-BR)** and focuses on delivering an engaging experience through **sound, visuals, and dynamic interactions**.
+
+[Play Now](#-live-demo) • [Features](#-features) • [Structure](#-project-structure) • [Technologies](#-technologies)
+
+</div>
 
 ---
 
-## 🕹️ O Projeto
+## 🌐 Live Demo
 
-O **Quiz Neymar** foi desenvolvido com tecnologias web puras, focando em uma experiência de usuário (UX) imersiva através de:
-* **Slideshow dinâmico** na tela inicial.
-* **Sistema de pontuação** em tempo real.
-* **Feedback sonoro** para acertos e erros.
-* **Trilha sonora** temática para maior imersão.
+> **[▶ Play now](https://kiellzz.github.io/quiz-neymar/)**
+
+Runs directly in the browser — no installation required.
 
 ---
 
-## 🛠️ Tecnologias
+## 🎯 Project Goal
 
-* **HTML5:** Estruturação semântica das páginas.
-* **CSS3:** Estilização moderna e layout responsivo.
-* **JavaScript (Vanilla):** Lógica do quiz, manipulação de DOM e controle de áudio/mídia.
+* Deliver a complete football trivia experience
+* Demonstrate strong fundamentals in **JavaScript and DOM manipulation**
+* Create an immersive UX using **audio + visual feedback**
+* Build a polished mini-game using **vanilla web technologies**
 
 ---
 
-## 📂 Estrutura de Arquivos
+## 🚀 Features
+
+* 🎞️ **Dynamic Slideshow**
+  * Engaging landing screen
+  * Smooth transitions
+  * Strong visual identity
+
+* 🧠 **Quiz System**
+  * Multiple-choice questions
+  * Real-time progression
+  * Score tracking
+
+* 🔊 **Audio Feedback**
+  * Sound effects for correct/incorrect answers
+  * Background music for immersion
+
+* 📊 **Score System**
+  * Instant feedback
+  * Final result screen
+
+* 🎨 **Responsive UI**
+  * Clean layout
+  * Works across different screen sizes
+
+---
+
+## 📂 Project Structure
 
 ```text
 quiz-neymar/
 │
-├── 📄 index.html      # Portão de entrada com slideshow e call-to-action
-├── 📄 quiz.html       # Interface principal do jogo e resultados
-├── 🎨 style.css       # Design unificado e responsividade
-├── ⚡ main.js        # O "cérebro" (lógica do quiz e efeitos sonoros)
-└── 📁 files/          # Assets de mídia (Imagens, trilha sonora e SFX)
-```
+├── 📄 index.html      # Landing page with slideshow
+├── 📄 quiz.html       # Main quiz interface
+├── 🎨 style.css       # Styling and responsiveness
+├── ⚡ main.js         # Quiz logic and audio control
+└── 📁 files/          # Images, music and sound effects
